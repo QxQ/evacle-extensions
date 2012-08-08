@@ -1,1 +1,23 @@
-this repository contains the source code for all of evacle's extensions (evacle.comuv.com). they can be install at the chrome web store (chrome.google.com/webstore)
+<html>
+<body>
+
+<h2> evacle's extensions </h2>
+
+<h3> about </h3>
+
+<p> this repository contains the source code for all of the extensions <a href='http://evacle.comuv.com'>evacle</a> has made. you can download any of the extensions <a href='http://evacle.comuv.com/extensions.html'>here</a>.</p>
+
+<h3>  extensions inside this repository </h3>
+
+<p> <a href='https://chrome.google.com/webstore/detail/nhjpoicdffokejclclfchgbhfjcmnmic?utm_source=github'>pinner</a> - adds a pin tab button so you don't have to right click to pin or unpin.</p>
+<p> <a href='https://chrome.google.com/webstore/detail/jjnlecdojfenkidbfdjejdmajggkegca?utm_source=github'>close pinned tab</a> - puts a close tab button in the address bar when you are currently viewing a pinned tab.</p> 
+<p> <a href='https://chrome.google.com/webstore/detail/oficfgdfeoknbjfhommlpiekdapmnebh?utm_source=github'> live on </a> - keeps chrome from closing when the last tab is closed by creating a pinned tab when there is one tab left. </p>
+<p> <a href='https://chrome.google.com/webstore/detail/jbfommnjldfeijjmfocfeiikcjoaglep?utm_source=github'> undo close </a> - allows you to undo closing a tab. </p>
+<p> <a href='https://chrome.google.com/webstore/detail/ghmpbhcnklckaophnagmnpdjpeapbghc?utm_source=github'> unload </a> - unload a tab. great for slow computers. </p>
+<p> <a href='https://chrome.google.com/webstore/detail/afbecjdnppbhpkiofpcfeaielocnicmn?utm_source=github'> quick start </a> - start chrome with all extenstions disabled, click to enabled some. great for slow computers </p>
+<p> <a href='https://chrome.google.com/webstore/detail/elndfjcidiaccgggfbbbhgnopdkahlnd?utm_source=github'> connection notifier </a> - tells you if you don't have internet connection. </p>
+<p> <a href='reload once connected'> reload once connected </a> - asks you if you wan't to reload all of your pages once chrome finds internet </p>
+<p> <a href='https://chrome.google.com/webstore/detail/ckpkopgfjkohaiedjhjedlnlllgahpnb?utm_source=github'> window manager </a> - lets you manage your windows in the click of a button. comparable to firefox's panorama </p>
+
+</body>
+</html>
