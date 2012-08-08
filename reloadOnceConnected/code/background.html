@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+
+window.addEventListener('online', function(){
+	if (confirm("internet has been found. push ok to reload all of your pages")) {
+		if (navigator.onLine) {
+			chrome.windows.getAll({populate: true}, function(windows){
+				for (var i=0; i<windows.length; i++) {
+					for (var j=0; j<windows[i].tabs.length; j++) {
+						chrome.tabs.reload(windows[i].tabs[j].id)
+					}
+				}
+			});
+	} else {
+			alert("we are sorry, you lost internet before we could complete this action")
+		}
+	}
+});
+chrome.tabs.onRemoved.addListener(function(tabId){
+	for (var i=0;i<errors.length;++i) {
+		if (errors[i].id == tabId) {
+			errors.splice(i,1)
+			continue
+		}
+	}
+});
+
+</script>
+</head>
+</html>
+<!-- vim: set sw=2 ts=2 et: -->

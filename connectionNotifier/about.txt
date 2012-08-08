@@ -1,0 +1,5 @@
+connection notifier
+
+tells you if you don't have internet connection.
+
+when you lose your connection, this extension will give you a notification and put a little icon in the address bar. when you are reconnected, it will notify you again, and the icon disappears.

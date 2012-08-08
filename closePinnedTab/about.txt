@@ -1,0 +1,9 @@
+close pinned tab
+
+puts a close tab button in the address bar when you are currently viewing a pinned tab.
+
+is it an annoying to have to right click in order to close a pinned tab? here is your solution. a little x appears in the address bar when ever you a viewing a pinned tab. click it to close it. that simple.
+
+the pin in the logo is from http://www.clker.com/cliparts/4/a/9/a/119498442666107289pin_-red_nicu_buculei_01.svg.hi.png
+
+you might also like "pinner", a pin/unpin tab button.

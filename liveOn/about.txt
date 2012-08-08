@@ -1,0 +1,7 @@
+Live On
+
+keeps chrome from closing when the last tab is closed by creating a pinned tab when there is one tab left.
+
+keep you from accidentally closing chrome from closing the last tab. this extension auto adds a pinned tab when you are on you last tab. as soon as you open a new tab, the pinned tab closes.
+
+this extension was made using "keep last two tabs" code. if you don't like the way this extension works or you want some settings that you can set, try "keep last two tabs".

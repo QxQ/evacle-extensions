@@ -1,0 +1,14 @@
+pinner
+
+adds a pin tab button so you don't have to right click to pin or unpin.
+
+this application puts a pin to the right of your address bar. click it to pin or unpin a tab. this is useful to people who pin and unpin tabs a lot and hates the lengthy process of right clicking and finding the "pin tab" option.
+
+you might also like "close pinned tab" close a pinned tab without right clicking
+
+thank you to these to websites for their images of pins:
+http://www.clker.com/cliparts/4/a/9/a/119498442666107289pin_-red_nicu_buculei_01.svg.hi.png
+http://www.clker.com/cliparts/3/2/0/d/1194984425806666249pin_-_blue_nicu_buculei_01.svg.hi.png
+
+also thanks to livibetter who created the application "keep last two tabs". I used his code as a kickstart to make this application.
+(https://chrome.google.com/webstore/detail/fcnmaiiahjldikaollhjobhchdbhfhgf)

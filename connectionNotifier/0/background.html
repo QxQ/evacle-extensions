@@ -1,0 +1,78 @@
+<html>
+<head>
+<script>
+
+var notifications = []
+var conected = navigator.onLine
+
+function notify(lost) {
+	if (lost && notifications.length==0) {
+		var notification = webkitNotifications.createNotification(
+			  "lost.png",
+			  "connection lost",
+			  "oh no! chrome can't reach the internet right now. try googling for help."
+		);
+	} else if (notifications.length==0) {
+		var notification = webkitNotifications.createNotification(
+			  "found.png",
+			  "connection found!",
+			  "yes! now you can google."
+		);
+	} else if (lost) {
+		var notification = webkitNotifications.createNotification(
+			  "lost.png",
+			  "never mind",
+			  "ignore that last message"
+		);
+	} else {
+		var notification = webkitNotifications.createNotification(
+			  "found.png",
+			  "never mind",
+			  "ignore that last message"
+		);
+	}
+	notification.onclick = function(){removeNotification(notifications.length)}
+	notification.show()
+	notifications[notifications.length] = [notification,setTimeout("removeNotification()",5000)];
+}
+function removeNotification(index) {
+	if (index == null) index=0;
+	notifications[0][0].cancel()
+	clearTimeout(notifications[0][1])
+	notifications.splice(0,1)
+}
+
+function showIcon(tab) {
+	if (conected==false) {
+		chrome.pageAction.show(tab.id)
+	} else {
+		chrome.pageAction.hide(tab.id)
+	}
+}
+
+chrome.tabs.onActiveChanged.addListener(function(tabId) { chrome.tabs.get(tabId,function(tab){showIcon(tab)}) });
+chrome.tabs.onUpdated.addListener(function(tabId){ chrome.tabs.get(tabId,function(tab){showIcon(tab)}) });
+
+window.addEventListener('online', function(){
+	if (conected==false) notify(false);
+	conected=true
+	chrome.tabs.getSelected(null,showIcon)
+});
+
+window.addEventListener('offline', function(){
+	notify(true)
+	conected=false
+	chrome.tabs.getSelected(null,showIcon)
+});
+
+chrome.pageAction.onClicked.addListener(function() {
+	conected=null
+	chrome.tabs.getSelected(null, showIcon)	
+});
+
+chrome.tabs.getSelected(null, showIcon)
+
+</script>
+</head>
+</html>
+<!-- vim: set sw=2 ts=2 et: -->

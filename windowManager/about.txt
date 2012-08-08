@@ -1,0 +1,11 @@
+window manager
+
+lets you manage your windows in the click of a button. comparable to firefox's panorama
+
+firefox has a simple way to switch between groups of tabs. this extension brings a simular solution. instead of groups of tabs, it will switch between different windows.
+
+note: screenshots don't always show up. there are a couple of reasons why a screenshot can't be taken. google's websites and websites beginning with chrome:// can't have screenshots. screenshots can only be taken from active tabs. if you open a tab without viewing it, a screenshot won't be taken from it.
+
+created by Evacle (theQxQ@gmail.com). please comment if you found any glitches or if you have some ideas you want to see in this extension.
+
+tags: window, windows, manager, management, manage your windows, window manager, window management, panorama, firefox, firefox's panorama, tabs, see all tabs, view tabs.

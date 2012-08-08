@@ -1,0 +1,14 @@
+{
+  "name": "undo close",
+  "version": "0.3",
+  "description": "allows you to undo closing a tab.",
+  "icons": {"48": "icon48.png",
+            "128": "icon128.png" },
+  "background_page": "background.html",
+  "permissions": ["tabs"],
+  "options_page": "options.html",
+  "page_action": {
+    "default_icon": "undo.png",
+    "default_title": "undo close tab"
+  }
+}

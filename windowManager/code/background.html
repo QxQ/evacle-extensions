@@ -1,0 +1,48 @@
+<html>
+<head>
+<script>
+chrome.browserAction.onClicked.addListener(function(tab) {
+	chrome.windows.create({
+		type:"popup",
+		url:"popup.html"
+	},function(window){
+		chrome.windows.getAll({populate:true},function(alltabs){
+			chrome.tabs.sendRequest(window.tabs[0].id,{windows:alltabs,id:window.id,screenShots:screenShots},function(responce){
+				if (responce.wind != null) {
+					chrome.windows.update(responce.wind, {focused:true}, function(){})
+				} else if (responce.tab != null) {
+					chrome.tabs.update(responce.tab, {active:true}, function(){})
+				}
+				chrome.windows.remove(window.id)
+			});
+		});
+	});
+});
+
+var screenShots = {}
+
+function updateTab(tab,screenShots) {
+	if (tab.active) {
+		chrome.tabs.captureVisibleTab(tab.windowid,{format:"jpeg",quality:10},function(screenShot){screenShots[tab.id]=screenShot})
+	}
+	return screenShots
+}
+
+chrome.tabs.onCreated.addListener(function(tab){
+	screenShots = updateTab(tab,screenShots)
+});
+chrome.tabs.onRemoved.addListener(function(tabId){
+	screenShots[tabId] = null
+});
+chrome.tabs.onUpdated.addListener(function(tabId,info,tab){
+	screenShots = updateTab(tab,screenShots)
+});
+chrome.tabs.onActiveChanged.addListener(function(tabId){
+	chrome.tabs.get(tabId, function(tab){
+		screenShots = updateTab(tab,screenShots)
+	});
+});
+</script>
+</head>
+</html>
+<!-- vim: set sw=2 ts=2 et: -->

@@ -1,0 +1,9 @@
+{
+  "name": "reload once connected",
+  "version": "0.1",
+  "description": "asks you if you wan't to reload all of your pages once chrome finds internet",
+  "icons": {"48": "icon48.png",
+            "128": "icon128.png" },
+  "background_page": "background.html",
+  "permissions": ["tabs"]
+}

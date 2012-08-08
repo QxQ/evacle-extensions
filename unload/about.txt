@@ -1,0 +1,7 @@
+Unload
+
+unload a tab. great for slow computers.
+
+if you like using lots of tabs, but your computer runs to slow for them, this is the extension for you. just from the click of a button, the tab unloads itself, freeing your computer from the ram and cpu it used. as soon as you return to the tab, it reloads everything.
+
+note: not all web pages can be unloaded. most google sites wont allow it.

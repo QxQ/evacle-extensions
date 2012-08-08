@@ -1,0 +1,5 @@
+reload once connected
+
+asks you if you wan't to reload all of your pages once chrome finds internet
+
+it's a pain to go through your tabs, one by one, and click the reload button every time you re-connect to the internet. this extension goes through that pain for you. when your computer re-connects to the internet, a box pops up asking if you would like to reload all of your tabs.

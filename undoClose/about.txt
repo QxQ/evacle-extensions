@@ -1,0 +1,9 @@
+undo close
+
+allows you to undo closing a tab.
+
+when you close a tab, a undo button appears in the address bar and stays there for 10 seconds. if you accidentally close one to many tabs, just click it to undo closing it. that simple.
+
+created by Evacle (theQxQ@gmail.com). please comment if you found any glitches or if you have some ideas you want to see in this extension.
+
+tags: undo, close, tab, tabs, closing, undoing, undo close tab, uno closing tabs, undo closing, undo icon, close tab, simple, useful, helpful, simple extensions, helpful extensions, easy to use.

@@ -1,0 +1,13 @@
+Quick Start
+
+start chrome with all extenstions disabled, click to enabled some. great for slow computers
+
+all you want to do is quickly google something, but you have to start up chrome. extension after useless extension loads when you don't want any of them. isn't there another way? how about only loading one extension. an extension that when clicked, loads the rest. so you can do your quick googling when you want to and you can have them all installed. and if your extensions start becoming memory hogers, click the button again, and they are all disabled.
+
+WARNING: this is not a stable version of it. there may be a chance that the extension fails to re-enable your extensions. this problem is usually cause by disabling the extension right after enabling them. not all of the extensions had a chance to be re-enabled and got recorded as disabled when they were supposed to be recorded as enabled. you will have to go to your preferences and enable them by hand if this happens.
+
+created by Evacle (theQxQ@gmail.com). please comment if you found any glitches or if you have some ideas you want to see in this extension.
+
+tags: disable, enable, extensions, disable extensions, enable extensions, re-enable extensions, reload extensions, save ram, save cpu, ram, cpu, memory, save memory, keep memory, quick start, quickly open chrome, make chrome faster, faster chrome, fast chrome, speedy chrome.
+
+you might also like unload, lets you unload a tab: https://chrome.google.com/webstore/detail/ghmpbhcnklckaophnagmnpdjpeapbghc

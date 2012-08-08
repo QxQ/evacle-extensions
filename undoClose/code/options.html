@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>undo close options</title>
+  <link href='http://fonts.googleapis.com/css?family=Jura|Arapey' rel='stylesheet' type='text/css'>
+<style>
+body {
+  font-family: 'Arapey', serif;
+  font-size: 16px;
+}
+h1 {
+  font-family: 'Jura', sans-serif;
+}
+h3 {
+  font-family: 'arapey', ans-serif;
+}
+button {
+  font-family: 'Arapey', serif;
+  font-size: 1.1em;
+}
+</style>
+
+<script type="text/javascript">
+
+function save(itom) {
+	localStorage[itom.id] = (document.getElementById(itom.id).checked)?1:0
+	
+}
+
+function restore() {
+	document.getElementById("forever").checked = (localStorage["forever"]==1)?true:false
+}
+
+function checkBox(name,text) {
+	document.write(
+		"<a/><div id=\"div "+name+"\"><label>"+
+		"<input type=\"checkbox\" name=\""+name+"\" id=\""+name+"\" onChange=save(this) />"+text+
+		"</label></div>"
+	)
+}
+
+</script>
+</head>
+
+
+
+
+<body>
+
+<p align="right">thank you to livibetter who helped programing the options page.</p>
+<h1>undo close: Options</h1>
+<hr/>
+
+<script type="text/javascript">
+
+checkBox("forever","keep the undo button forever instead of for 10 seconds")
+
+restore()
+
+</script>
+
+</body>
+</html>
+<!-- vim: set sw=2 ts=2 et: -->

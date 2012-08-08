@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  <style type="text/css">
+  
+  
+	html,body
+	{
+	  height:100%;
+	  margin:0;
+	  padding:0;
+	}
+	.table { display:table }
+	.row { display:table-row }
+	.cell { display:table-cell }
+  </style>
+  
+
+  
+  </head>
+
+  <body  bgcolor="silver" onmousedown="pin()">
+  
+  <div class="table" style="width:100%;height:100%;">
+	  <div class="row">
+		<div class="cell" style="text-align:center;vertical-align:middle;">
+		  <img src="icon128.png" alt="pin/unpin tab"/>
+	  </div>
+	</div>
+  </div>
+
+  </body>
+  
+  <script type="text/javascript">
+  
+	pin=function() {
+		chrome.extension.sendRequest({pinTab:true}, function(response) {});
+	}
+  
+  </script>
+  
+</html>

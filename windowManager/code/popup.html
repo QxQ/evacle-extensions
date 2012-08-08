@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>window managment</title>
+</head>
+
+<body>
+<script>
+var send;
+chrome.extension.onRequest.addListener( function(request, sender, sendResponse) {
+	send = sendResponse
+	windows = request.windows
+	var title
+	document.write("<table><col span=\""+windows.length+"\"/>")
+	for (var i in windows) {
+		if (windows[i].id != request.id) {
+		
+			++i
+			document.write("<tr><td>")
+			document.write("<h4 onclick=\"gotoWind(windows["+i+"-1].id)\" >window "+i+"</h4>")
+			document.write("</td></tr>")
+			--i
+			
+			document.write("<tr>")
+			for (var j in windows[i].tabs) {
+				title = windows[i].tabs[j].title
+				if (title.length > 25) {
+					title = title.slice(0,25)
+					if (title.slice(24,25)==" ") {
+						title = title.slice(0,24)
+					}
+					title += "..."
+				}
+				document.write("<td>")
+				if (windows[i].tabs[j].active) {
+					document.write("<h4> <img src=\""+windows[i].tabs[j].favIconUrl+"\" width=16 height=16></img>"+title+"<p/></h4>")
+				} else {
+					document.write("<a> <img src=\""+windows[i].tabs[j].favIconUrl+"\" width=16 height=16></img>"+title+"<p/></a>")
+				}
+				document.write("</td>")
+			}
+			document.write("</tr><tr>")
+			
+			for (var j in windows[i].tabs) {
+				document.write("<td>")
+				document.write("<a onclick=\"gotoTab(windows["+i+"].tabs["+j+"].id)\" > <img src=\""+request.screenShots[windows[i].tabs[j].id]+"\" width=220 height=130></img><p/></a>")
+				document.write("</td>")
+			}
+			document.write("</tr>")
+		}
+	}
+	document.write("</table>")
+	//sendResponse({});
+});
+
+function gotoWind(id) {
+	send({wind:id})
+}
+function gotoTab(id) {
+	send({tab:id})
+}
+
+</script>
+
+</body>
+</html>
+<!-- vim: set sw=2 ts=2 et: -->

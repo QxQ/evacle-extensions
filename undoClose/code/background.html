@@ -1,0 +1,103 @@
+<html>
+<head>
+<script>
+closedTab = {url:""}
+var alarm
+
+var tabs = []
+var closedWindow = []
+chrome.windows.getAll({populate: true}, function(windows){
+    for (var i=0; i<windows.length; i++) {
+		for (var j=0; j<windows[i].tabs.length; j++) {
+			tabs[tabs.length]=windows[i].tabs[j]
+		}
+	}
+});
+chrome.tabs.onRemoved.addListener(function(tabId,info) {
+	clearTimeout(alarm);
+	for (var i=0;i<tabs.length;i++) {
+		if (tabId == tabs[i].id) {
+			closedTab = tabs[i]
+			tabs.splice(i,1)
+			break
+		}
+	}
+	if (info.isWindowClosing) {
+		closedWindow[closedWindow.length] = closedTab.url
+	} else {
+		closedWindow = []
+	}
+	chrome.windows.getAll({populate: true}, function(windows){
+		for (var i=0; i<windows.length; i++) {
+			for (var j=0; j<windows[i].tabs.length; j++) {
+				showIcon(windows[i].tabs[j].id,windows[i].tabs[j])
+			}
+		}
+	});
+	if (localStorage["forever"]!=1)
+		alarm = setTimeout("hideIcon()",10000);
+});
+function hideIcon() {
+	chrome.windows.getAll({populate: true}, function(windows){
+		for (var i=0; i<windows.length; i++) {
+			for (var j=0; j<windows[i].tabs.length; j++) {
+				chrome.pageAction.hide(windows[i].tabs[j].id)
+			}
+		}
+	});
+	closedTab = {url:""}
+}
+function showIcon(tabId,tab) {
+	if (tab.url != "") {
+		chrome.pageAction.setTitle({tabId:tabId,title:"undo close tab: "+closedTab.title})
+		chrome.pageAction.show(tabId)
+	};
+}
+chrome.pageAction.onClicked.addListener(function() {
+	if (localStorage["forever"]!=1)
+		clearTimeout(alarm);
+	if (closedWindow == []) {
+		chrome.tabs.create({
+			windowId:closedTab.windowId,
+			index:closedTab.index,
+			url:closedTab.url,
+			active:true,
+			pinned:closedTab.pinned
+		}, function(){})
+	} else {
+		chrome.windows.create({
+			"focused":true,
+			"url":closedWindow
+		})
+	}
+	hideIcon()
+});
+
+function updateURL(tabId) {
+	chrome.tabs.get(tabId, function(tab) {
+		for (var i=0;i<tabs.length;i++) {
+			if (tabId == tabs[i].id) {
+				tabs[i] = tab
+				break
+			}
+		}
+	});
+}
+
+chrome.tabs.onActiveChanged.addListener(function(tabId){showIcon(tabId,closedTab)});
+chrome.tabs.onUpdated.addListener(function(tabId,updateInfo){
+	if (updateInfo.status='complete') {
+		updateURL(tabId,updateInfo.url)
+		showIcon(tabId,closedTab)
+	}
+});
+
+chrome.tabs.onCreated.addListener(function(tab) {
+	tabs[tabs.length]=tab
+});
+</script>
+</head>
+<body>
+</body>
+</html>
+<!-- vim: set sw=2 ts=2 et: -->

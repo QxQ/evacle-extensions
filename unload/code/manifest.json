@@ -1,0 +1,14 @@
+{
+  "name": "Unload",
+  "version": "0.2.3",
+  "description": "unload a tab. great for slow computers.",
+  "icons": {"48": "icon48.png",
+            "128": "icon128.png" },
+  "background_page": "background.html",
+  "permissions": ["tabs","http://*/"],
+  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": "unload.png",
+    "default_title": "unload this page"
+  }
+}
