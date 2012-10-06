@@ -1,7 +1,7 @@
 {
   "name": "close pinned tab",
   "description": "puts a close tab button in the address bar when you are currently viewing a pinned tab.",
-  "version": "0.1",
+  "version": "0.2",
   "manifest_version":2,
   "icons": {"48": "icon48.png",
             "128": "icon128.png" },
