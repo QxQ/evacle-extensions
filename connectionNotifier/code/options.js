@@ -16,6 +16,7 @@ function initSettings() { //initializes code before checkBox function can be use
 	var group = document.createElement('div')
 	group.style.marginTop = '55px'
 	group.id = 'options'
+	/* storage isn't an optional permission, this code can't be used.
 	chrome.permissions.contains({permissions: ['storage'] },  //requests optional permisions to use "storage"
 		function(result) {
 			if (!result) {
@@ -31,6 +32,7 @@ function initSettings() { //initializes code before checkBox function can be use
 				document.getElementById('overlay-box').style.display='block'
 			}
 		});
+	*/
 	document.body.appendChild(group)
 }
 function checkBox(name, text, defaultValue) { //creates a checkbox

@@ -2,7 +2,7 @@
   "name": "connection notifier",
   "description": "tells you if you don't have internet connection.",
   "homepage_url":"http://evacle.comuv.com",
-  "version": "0.2",
+  "version": "0.2.3",
   "manifest_version": 2,
   "icons": {"48": "icon48.png",
             "128": "icon128.png" },
@@ -10,8 +10,7 @@
   	"page": "background.html"
   },
   "options_page": "options.html",
-  "permissions": ["tabs","notifications"],
-  "optional_permissions": [ "storage" ],
+  "permissions": ["tabs","notifications","storage"],
   "page_action": {
     "default_icon": "icon128.png",
     "default_title": "you aren't connected to the internet, click to dismiss"
