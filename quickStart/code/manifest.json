@@ -1,6 +1,6 @@
 {
   "name": "Quick Start",
-  "version": "0.2.2",
+  "version": "0.3",
   "description": "start chrome with all extenstions disabled, click to enabled some. great for slow computers",
   "homepage_url":"http://evacle.comuv.com",
   "manifest_version": 2,
@@ -9,7 +9,7 @@
   "background": {
   	"page":"background.html"},
   "options_page": "options.html",
-  "permissions": ["management"],
+  "permissions": ["management","storage"],
   "browser_action": {
     "default_icon": "enabled.png",
     "default_title": "enable extenstions"
