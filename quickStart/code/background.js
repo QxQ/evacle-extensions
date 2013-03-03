@@ -2,7 +2,7 @@ enabled = true
 function disable(enabled) {
 	if (enabled) {
 		chrome.browserAction.setIcon({path:"enabled.png"})
-		chrome.browserAction.setTitle({title:"disable extenstions"})
+		chrome.browserAction.setTitle({title:"enable extenstions"})
 		chrome.management.getAll( function(extenstions) {
 			
 			store = ""
@@ -29,7 +29,7 @@ function disable(enabled) {
 	} else {
 	
 		chrome.browserAction.setIcon({path:"disabled.png"})
-		chrome.browserAction.setTitle({title:"enable extenstions"})
+		chrome.browserAction.setTitle({title:"disable extenstions"})
 		
 		store = localStorage["extenstions"].split("|")
 		oldExtenstions = []

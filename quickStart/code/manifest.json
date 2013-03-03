@@ -1,6 +1,6 @@
 {
   "name": "Quick Start",
-  "version": "0.3",
+  "version": "0.3.1",
   "description": "start chrome with all extenstions disabled, click to enabled some. great for slow computers",
   "homepage_url":"http://evacle.comuv.com",
   "manifest_version": 2,
