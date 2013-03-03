@@ -1,10 +1,11 @@
 {
   "name": "Unload",
-  "version": "0.2.3",
+  "version": "0.2.4",
+  "manifest_version": 2,
   "description": "unload a tab. great for slow computers.",
   "icons": {"48": "icon48.png",
             "128": "icon128.png" },
-  "background_page": "background.html",
+  "background": {"page":"background.html"},
   "permissions": ["tabs","http://*/"],
   "options_page": "options.html",
   "browser_action": {

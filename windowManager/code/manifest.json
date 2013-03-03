@@ -1,10 +1,11 @@
 {
   "name": "window manager",
-  "version": "0.1",
+  "version": "0.1.2",
+  "manifest_version": 2,
   "description": "lets you manage your windows in the click of a button. comparable to firefox's panorama",
   "icons": {"48": "icon48.png",
             "128": "icon128.png" },
-  "background_page": "background.html",
+  "background": {"page":"background.html"},
   "permissions": ["tabs","http://*/"],
   "browser_action": {
     "default_icon": "logo.png",
