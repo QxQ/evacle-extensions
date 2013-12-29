@@ -1,6 +1,6 @@
 {
   "name": "pinner",
-  "version": "0.3",
+  "version": "0.4",
   "manifest_version": 2,
   "description": "adds a pin tab button so you don't have to right click to pin or unpin.",
   "icons": {"48": "icon48.png",
@@ -11,5 +11,15 @@
   "browser_action": {
     "default_icon": "pin.png",
     "default_title": "pin tab"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Alt+P",
+        "mac": "Alt+P",
+        "chromeos": "Alt+P",
+        "linux": "Alt+P"
+      }
+    }
   }
 }
