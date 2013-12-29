@@ -60,11 +60,11 @@ function changeIcon(tabId, selectInfo) { //this function is used to update icon 
 		if (tab.pinned) {
 				if (_changeIcon)
 					{ chrome.browserAction.setIcon({path:"unpin.png"}) }
-				chrome.browserAction.setTitle({title:"unpin tab"})
+				chrome.browserAction.setTitle({title:"unpin tab (ALT P)"})
 		} else {
 				if (_changeIcon)
 					{ chrome.browserAction.setIcon({path:"pin.png"}) }
-				chrome.browserAction.setTitle({title:"pin tab"})
+				chrome.browserAction.setTitle({title:"pin tab (ALT P)"})
 		}
 	});
 }
@@ -79,3 +79,6 @@ chrome.browserAction.onClicked.addListener(function(tab) { //pins/unpins a tab w
 	chrome.tabs.update(tab.id, { pinned:(!tab.pinned) }, function(){} )
 	changeIcon(tab.id)
 });
+
+//set the badge text to tell user about hotkey. this is temporary and will be removed later.
+chrome.browserAction.setBadgeText({text:"alt p"})
