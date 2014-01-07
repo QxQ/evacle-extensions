@@ -79,6 +79,3 @@ chrome.browserAction.onClicked.addListener(function(tab) { //pins/unpins a tab w
 	chrome.tabs.update(tab.id, { pinned:(!tab.pinned) }, function(){} )
 	changeIcon(tab.id)
 });
-
-//set the badge text to tell user about hotkey. this is temporary and will be removed later.
-chrome.browserAction.setBadgeText({text:"alt p"})
